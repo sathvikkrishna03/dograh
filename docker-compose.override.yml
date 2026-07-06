@@ -1,0 +1,12 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    volumes:
+      - ./api:/app/api
+
+  ui:
+    build:
+      context: .
+      dockerfile: ui/Dockerfile
