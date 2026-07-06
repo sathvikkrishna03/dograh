@@ -1,0 +1,25 @@
+# docker-compose.hostinger.yml
+# Based on the project's docker-compose.yml
+# Changes:
+# 1. api uses build instead of prebuilt image
+# 2. ui uses build instead of prebuilt image
+# Everything else should remain identical to your original docker-compose.yml.
+
+# IMPORTANT:
+# Copy your existing docker-compose.yml and make ONLY these changes.
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+
+  ui:
+    build:
+      context: .
+      dockerfile: ui/Dockerfile
+
+# Leave all other services (postgres, redis, minio, dograh-init,
+# nginx, coturn, cloudflared), environment variables, ports,
+# depends_on, healthchecks, volumes and networks EXACTLY the same
+# as in your original docker-compose.yml.
